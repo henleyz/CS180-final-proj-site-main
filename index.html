@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1170X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:width" content="1170"/>
   <meta property="og:image:height" content="630"/>
 
 
@@ -38,10 +38,10 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Stable Diffusion</h1>
+            <h1 class="title is-1 publication-title">Neural Radiance Fields</h1>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Henley Zhang<br>November 18, 2024</span>
+                    <span class="author-block">Henley Zhang<br>December 11, 1724</span>
                   </div>
 
           </div>
@@ -58,11 +58,11 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Part 5A The Power of Diffusion Models</h2><img src="static/images/5a/rocket.png" alt="emir" class="abstract-image" style="width: 200%;">
+        <h2 class="title is-3">Intro</h2><img src="static/images/5a/rocket.png" alt="emir" class="abstract-image" style="width: 170%;">
         <div class="content has-text-justified">
           
           <p>
-           In this part, I played around with a pretrained diffusion model which is called DeepFloyed IF. I used this model to denoise an image. This method was used to implment diffusion. Then classifer free guidende was implemented. 
+           This project shows how to use Neural Radiance Fields to create images or video from novel viewing angles. 
           </p>
         </div>
       </div>
@@ -76,36 +76,106 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Part 0. Sampling using a diffusion model</h2>
+        <h2 class="title is-3">1. Fit a Neural Field to a 2d image</h2>
         <h3 class="title is-4">Approach</h3>
 
         <div class="content has-text-justified">
           <p>
-              For this part, I just used pytorch along with the deepfloyed diffusion model to output images.This was done using 20 and 100 steps.  I used seed 1234
-              The quality does improve with more steps, and it does show the text prompts. 
-         
+              For this part, we created a Sinusoidal Positional Encoding layuer that converts a tensor of coordinates into a tensor of Positional Encodings. 
+The main structure is a multi layer perceptron with 3 layers. 
             </p>
 
 
 
 
 
-          <h3 class="title is-4">Results steps = 20 </h3>
-          <img src="static/images/5a/snowy.png" alt="snowet" >
-          <h3 class="title is-5">An oil painting of a snowy mountain</h3>
-          <img src="static/images/5a/hat.png" alt="hat" >
-          <h3 class="title is-5">man wearing a hat</h3>
-          <img src="static/images/5a/rs.png" alt="rs" >
-          <h3 class="title is-5">rocket ship</h3>
+          <img src="static/images/fox_0.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_1.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_2.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_3.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_4.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_5.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_6.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_7.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_8.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_9.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_10.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_11.png" alt="fox" class="abstract-image">
+          <img src="static/images/fox_12.png" alt="fox" class="abstract-image">
 
-          <h3 class="title is-4">Results steps = 30 </h3>
+          <img src="static/images/fox_13.png" alt="fox" class="abstract-image">
 
-          <img src="static/images/5a/s100.png" alt="snowet" >
-          <h3 class="title is-5">An oil painting of a snowy mountain</h3>
-          <img src="static/images/5a/h100.png" alt="hat" >
-          <h3 class="title is-5">man wearing a hat</h3>
-          <img src="static/images/5a/r100.png" alt="rs" >
-          <h3 class="title is-5">rocket ship</h3>
+
+          <h3 class="title is-4">Results</h3>
+
+          <img src="static/images/fox_13.png" alt="fox" class="abstract-image">
+          <h3 class="title is-5">Predicted Fox</h3>
+
+          <img src="static/images/fox.jpg" alt="fox" class="abstract-image">
+
+          <h3 class="title is-5">Original Fox</h3>
+
+          <img src="static/images/psnrfox.png" alt="fox" class="abstract-image">
+          <h3 class="title is-5">Iterations vs PSNR graph for Fox</h3>
+
+          <img src="static/images/msefox.png" alt="fox" class="abstract-image">
+
+
+
+
+
+          <h3 class="title is-5">Iterations vs MSE graph for Fox</h3>
+
+
+          <h3 class="title is-4">Example for Oski</h3>
+
+          <img src="static/images/oski0.jpg" alt="oski" class="abstract-image">
+          <img src="static/images/oski1.jpg" alt="oski" class="abstract-image">
+          <img src="static/images/oski2.jpg" alt="oski" class="abstract-image">
+          <img src="static/images/oski3.jpg" alt="oski" class="abstract-image">
+          <img src="static/images/oski4.jpg" alt="oski" class="abstract-image">
+          <img src="static/images/oski5.jpg" alt="oski" class="abstract-image">
+          <img src="static/images/oski6.jpg" alt="oski" class="abstract-image">
+          <img src="static/images/oski7.jpg" alt="oski" class="abstract-image">
+          <img src="static/images/oski8.jpg" alt="oski" class="abstract-image">
+          <img src="static/images/oski9.jpg" alt="oski" class="abstract-image">
+          <img src="static/images/oski.jpg" alt="oski" class="abstract-image">
+
+          <h3 class="title is-5">Original Oski</h3>
+
+          <img src="static/images/oskipsnr.png" alt="oski" class="abstract-image">
+
+          <h3 class="title is-5">Iterations vs PSNR graph for Oski</h3>
+
+          <img src="static/images/oskimse.png" alt="oski" class="abstract-image">
+
+          <h3 class="title is-5">Iterations vs MSE graph for Oski</h3>
+
+
+
+
+
+          <h3 class="title is-4">HyperParameter Training</h3>
+          <p>I tried to find the  best combination of learning rate and number of layers. It trurns out 7 layers with a small learning rate of 0.001 yielded the best results. </p>
+
+          <img src="static/images/psnr_lines.png" alt="hyper" class="abstract-image" style="width: 100%;">
+
+          <h3 class="title is-5">PSNR vs Iterations for different learning rates and layers</h3>
+
+          <img src="static/images/msetrails.png" alt="hyper" class="abstract-image" style="width: 100%;">
+
+          <h3 class="title is-5">MSE vs Iterations for different learning rates and layers</h3>
+
+          <img src="static/images/foxse.png" alt="hyper" class="abstract-image" style="width: 100%;">
+
+
+
+
+
+
+          
+
+
 
           
         </div>
@@ -118,114 +188,40 @@
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
-    <h2  class="title is-3">1.1 Forward Process</h2>
-        <h3 class="title is-4">Approach</h3>
+    <h2  class="title is-3">2.1 Create Rays from Cameras</h2>
+        <h3 class="title is-4">Camera to World Coordinate Conversion</h3>
         <div class="content has-text-justified">
-          <p>Here I wrote the forward process which was the equation which adds noise to an image with mean sqrt(alpha) and variance sqrt(1-alpha)</p>
-            <img src="static/images/5a/eqn1.png" alt="forward" >
-
-          <h3 class="title is-4">Results</h3>
-
-          <img src="static/images/5a/c.png" alt="forward" >
-          <h3 class="title is-5">Original Image</h3>
-
-          <img src="static/images/5a/c_n_250.png" alt="forward" >
-          <h3 class="title is-5">Image with noise added t=250</h3>
-
-          <img src="static/images/5a/c_n_500.png" alt="forward" >
-          <h3 class="title is-5">Image with noise added t=500</h3>
-
-          <img src="static/images/5a/c_n_750.png" alt="forward" >
-          <h3 class="title is-5">Image with noise added t=750</h3>
-
-          <h2  class="title is-3">1.2 Classical Denoising</h2>
-          <h3 class="title is-4">Approach</h3>
-          <div class="content has-text-justified">
-            <p>Here I denoised by adding a gaussian filter blur to the noised images with kernel 13 sigma 2</p>
+          <p>This is the transform functionm, which simply converts 3D points from camera coordinates to world coordinates. takes a transformation matrix (c2w) and a batch of 3D points (x_c), extends the points into homogeneous coordinates, applies the transformation, and then converts the result back into standard 3D coordinates by dividing by the homogeneous scale factor.</p>
+          
+          <h3 class="title is-4">Pixel to Camera Conversion</h3>
   
-            <h3 class="title is-4">Results</h3>
+            <p>This is the pixel_to_camera function, whcih transforms 2D pixel coordinates (uv) from the image plane into 3D camera coordinates. Using the camera  matrix (K) and a scaling factor (s), it first converts the pixel coordinates into homogeneous form, applies the inverse of the intrinsic matrix to map them to normalized camera coordinates, and then scales the result to return the 3D camera coordinates.
+
+              <h3 class="title is-4">Pixel to Ray</h3>
+  
+              <p> This is the pixel_to_ray function, which computes the origin (r_o) and direction (r_d) of 3D rays in world coordinates, given pixel coordinates (uv), the camera intrinsic matrix (K), and the camera-to-world transformation matrix (c2w).
+                
+                It first determines the camera origin in world coordinates by inverting the camera's rotation and translation. Then, it converts the pixel coordinates into normalized camera coordinates using pixel_to_camera and transforms them to world coordinates using transform. Finally, it calculates the ray direction from the camera origin to the transformed world coordinates and normalizes it. The resulting rays (r_o, r_d) describe the path of light through the camera into the scene.
   
   
-            <img src="static/images/5a/g_250.png" alt="forward" >
-            <h3 class="title is-5">Gaussian Blur Denoised t=250</h3>
+
+                <h2  class="title is-3">2.2 Sampling</h2>
+
+
+
+          <h3 class="title is-4">Sampling Rays from Image</h3>
   
-            <img src="static/images/5a/g5.png" alt="forward" >
-            <h3 class="title is-5">Gaussian Blur Denoised t=500</h3>
-  
-            <img src="static/images/5a/g7.png" alt="forward" >
-            <h3 class="title is-5">Gaussian Blur Denoised t=750</h3>
-            <h2  class="title is-3">1.3 One Step Denoising</h2>
-            <h3 class="title is-4">Approach</h3>
-            <div class="content has-text-justified">
-              <p>Use the pretrained difussion model and equations given to recover the image from the noise. THe model predicts the noise, and the equation is used to reocver the predicted image.</p>
-
-              <h3 class="title is-4">Results</h3>
-    
-              <img src="static/images/5a/c.png" alt="forward" >
-              <h3 class="title is-5">Original Image</h3>
-    
-              <img src="static/images/5a/c_n_250.png" alt="forward" >
-              <h3 class="title is-5">Image with noise added t=250</h3>
-
-              <img src="static/images/5a/1s2.png" alt="forward" >
-              <h3 class="title is-5">One step denoised t=250</h3>
-    
-              <img src="static/images/5a/c_n_500.png" alt="forward" >
-              <h3 class="title is-5">Image with noise added t=500</h3>
-
-              <img src="static/images/5a/1s5.png" alt="forward" >
-              <h3 class="title is-5">One step denoised t=500</h3>
-    
-              <img src="static/images/5a/c_n_750.png" alt="forward" >
-              <h3 class="title is-5">Image with noise added t=750</h3>
-
-              <img src="static/images/5a/1s7.png" alt="forward" >
-              <h3 class="title is-5 ">One step denoised t=750</h3>
-
-              <img src="static/images/5a/1ss.png" alt="forward" >
-              <h3 class="title is-5">One Step Denoised Result</h3>
+            <p>This is the  sample_rays_from_images function, which samples pixel values and computes 3D rays for a batch of images. It converts pixel coordinates to rays using the pixel_to_ray function and gathers the pixel values, ray origins, and directions for all images into concatenated tensors.
+            
+          
+              <h3 class="title is-4">Sampling Points along the Rays</h3>
+              <p> This is thee sample_points_along_rays function, which samples points along each ray by generating num_samples points between a specified near and far distance. It perturbs the sampling positions if perturb is enabled, then calculates the 3D coordinates of the sampled points along the ray by using the ray origins (rays_o) and directions (rays_d).</p>
 
 
-    
    
         </div>
 
 
-        <h3 class="title is-5">Gaussian Blur Denoised t=750</h3>
-        <h2  class="title is-3">1.4 Iterative Denoising</h2>
-        <h3 class="title is-4">Approach</h3>
-        <div class="content has-text-justified">
-          <p>We can get a much better result if we denoise in steps to get the clear image. We first create a list of timesteps strided timestpes. For each timestep we use this equation to recover the next iteration of denoised image. </p>
-          <img src="static/images/5a/eqn2.png" alt="forward" >
-          <img src="static/images/5a/eq3.png" alt="forward" >
-          <h3 class="title is-4">Results</h3>
-
-          <img src="static/images/5a/id90.png" alt="forward" >
-          <h3 class="title is-5">Iterative Denoised t=90</h3>
-
-          <img src="static/images/5a/id240.png" alt="forward" >
-          <h3 class="title is-5">Iterative Denoised t=240</h3>
-
-          <img src="static/images/5a/id390.png" alt="forward" >
-          <h3 class="title is-5">Iterative Denoised t=390</h3>
-
-
-          <img src="static/images/5a/id540.png" alt="forward" >
-          <h3 class="title is-5">Iterative Denoised t=540</h3>
-
-          <img src="static/images/5a/id690.png" alt="forward" >
-          <h3 class="title is-5">Iterative Denoised t=690</h3>
-
-          <img src="static/images/5a/idc.png" alt="forward" >
-          <h3 class="title is-5">Iterative Denoised Result</h3>
-
-          <img src="static/images/5a/1ss.png" alt="forward" >
-          <h3 class="title is-5">One Step Denoised Result</h3>
-
-          <img src="static/images/5a/g7.png" alt="forward" >
-          <h3 class="title is-5">Gaussian Blur Denoised Result</h3>
-
-
 
 
 
@@ -246,42 +242,22 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">1.5 Diffusion Model Sampling</h2>
-        <h3 class="title is-4">Approach</h3>
+        <h2 class="title is-3">2.3 Putting the Dataloading all together</h2>
+        <h3 class="title is-4">NerfDataset Class. </h3>
 
         <div class="content has-text-justified">
           <p> 
-           Instead of starting from a noise image, we can start from pure noise to sample from the diffusion model.
+           This class converts an image into a PyTorch dataset where each pixel is treated as a data sample. For a given index, it returns the normalized 2D coordinates of the pixel and its color values as tensors.
           </p>
 
 
 
-            <h3 class="title is-4">Results</h3>
+            <h3 class="title is-4">With the given Visualzation code, it produced these images with pertrub = True. </h3>
             <div class="image-caption-set">
-              <img src="static/images/5a/dms1.png" alt="church" class="abstract-image">
+              <img src="static/images/visio.png" alt="church" class="abstract-image" style="width: max-content;">
               <h3 class="title is-5">Sample 1</h3>
             </div>
 
-            <div class="image-caption-set">
-              <img src="static/images/5a/dms2.png" alt="church" class="abstract-image">
-              <h3 class="title is-5">Sample 2</h3>
-            </div>
-
-            <div class="image-caption-set">
-              <img src="static/images/5a/dms3.png" alt="church" class="abstract-image">
-              <h3 class="title is-5">Sample 3</h3>
-            </div>
-
-            <div class="image-caption-set">
-              <img src="static/images/5a/dms4.png" alt="church" class="abstract-image">
-              <h3 class="title is-5">Sample 4</h3>
-            </div>
-
-            <div class="image-caption-set">
-              <img src="static/images/5a/dms5.png" alt="church" class="abstract-image">
-              <h3 class="title is-5">Sample 5</h3>
-
-            </div>
 
             
       
@@ -292,44 +268,94 @@
 
 
 
-        <h2 class="title is-3">1.6 Classifier Free Guidance</h2>
+        <h2 class="title is-3">2.4 Neural Radiance Field</h2>
         <h3 class="title is-4">Approach</h3>
 
         <div class="content has-text-justified">
           <p> 
-           We can get a much higher quality image if we apply CFG. We the noise estimate of the conditional and the unconditional. 
+           I created this neural network composed for several smaller subnets. I reused the positoinal encoding network from the first part. For the forward pass, we call sample along the rays, which as passed into the model, which is then reshaped and passed into the volrend function. To render the image, the x and y pixels are combined into a tensor and passed into pixel to ray, which is then passed into the model and volrend to create the image. 
           </p>
-          <img src="static/images/5a/eqn4.png" alt="forward" >
+          <img src="static/images/mlp_nerf.png" alt="forward" style="width: max-content" >
+
+                
+          <h3 class="title is-4">2.5 Volume Rendering</h3>
+          <p> This is volrend function, which takes in B x N x 1 sigmas and B x N x 3 colors tensors and well as sampled deltas. It calculates the cumulative absorption (cumulative_sigmas) and the probabilities of light not terminating (prob_not_terminate) or terminating (prob_terminate) at each point.  Probabilities are used to weight the RGB colors, and the function then returns the accumulated color values] after rendering the scene.
 
 
 
+            <h3 class="title is-4">Validation Images</h3>
 
-            <h3 class="title is-4">Results</h3>
+   
+              <img src="static/images/image_0_0.png"  class="abstract-image" style="width: 17%;">
+              <img src="static/images/image_0_1.png"  class="abstract-image" style="width: 17%;">
+              <img src="static/images/image_0_2.png"  class="abstract-image" style="width: 17%;">
+              <img src="static/images/image_0_3.png"  class="abstract-image" style="width: 17%;">
+              <img src="static/images/image_0_4.png"  class="abstract-image" style="width: 17%;">
+              <img src="static/images/image_0_5.png"  class="abstract-image" style="width: 17%;">
+              <img src="static/images/image_0_6.png"  class="abstract-image" style="width: 17%;">
+              <img src="static/images/image_0_7.png"  class="abstract-image" style="width: 17%;">
+              <img src="static/images/image_0_8.png"  class="abstract-image" style="width: 17%;">
+              <img src="static/images/image_0_9.png"  class="abstract-image" style="width: 17%;">
+              <br>
 
-            <div class="image-caption-set">
-              <img src="static/images/5a/cfg1.png"  class="abstract-image">
-              <h3 class="title is-5">Sample 1</h3>
-            </div>
+              <img src="static/images/image_5_0.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_5_1.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_5_2.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_5_3.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_5_4.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_5_5.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_5_6.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_5_7.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_5_8.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_5_9.png" class="abstract-image" style="width: 17%;">
+<br>
 
-            <div class="image-caption-set">
-              <img src="static/images/5a/cf2.png"  class="abstract-image">
-              <h3 class="title is-5">Sample 2</h3>
-            </div>
+<img src="static/images/image_10_0.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_10_1.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_10_2.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_10_3.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_10_4.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_10_5.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_10_6.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_10_7.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_10_8.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_10_9.png" class="abstract-image" style="width: 17%;">
+<br>
 
-            <div class="image-caption-set">
-              <img src="static/images/5a/cfg3.png"  class="abstract-image">
-              <h3 class="title is-5">Sample 3</h3>
-            </div>
+<img src="static/images/image_15_0.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_15_1.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_15_2.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_15_3.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_15_4.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_15_5.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_15_6.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_15_7.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_15_8.png" class="abstract-image" style="width: 17%;">
+<img src="static/images/image_15_9.png" class="abstract-image" style="width: 17%;">
 
-            <div class="image-caption-set">
-              <img src="static/images/5a/cfg4.png"  class="abstract-image">
-              <h3 class="title is-5">Sample 4</h3>
-            </div>
 
-            <div class="image-caption-set">
-              <img src="static/images/5a/cfg5.png"  class="abstract-image">
-              <h3 class="title is-5">Sample 5</h3>
-            </div>
+
+<img src="static/images/gif.gif"  class="abstract-image" style="width: 100%">
+
+
+<img src="static/images/psnr.png"  class="abstract-image" style="width: 100%">
+<h3 class="title is-5">PSNR vs Iterations</h3>
+
+<img src="static/images/mse.png"  class="abstract-image" style="width: 100%">
+
+<h3 class="title is-5">Bells and Whistles - Color Background</h3>
+<p>
+
+
+  In the volrend_colorbg function, I added the background color  by first calculating the total opacity along each ray (bg_prod) as the sum of the products of sigmas and step_size. The background weight (bg_weights) is then computed as the exponential of the negative bg_prod, determining how much of the background color should be visible. The background color, defined as a light blue ([0.5, 0.7, 1.0]), is weighted by bg_weights, and this contribution is added to the cumulative colors obtained from the volumetric rendering. This results in the final color that incorporates both the volumetric effects and the background. It looks awful because some of the floor appears as opaque. 
+
+
+
+</p>
+
+
+<img src="static/images/colorbackground.gif"  class="abstract-image" style="width: 100%">
+
 
         </div>
       </div>
@@ -340,518 +366,6 @@
 
 
 
-
-
-
-
-
-
-
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <h2  class="title is-3">1.7 Image to Image Translation</h2>
-        <h3 class="title is-4">Approach</h3>
-        <div class="content has-text-justified">
-          <p>Here we take a image and add noise to it, then denoise. We take the original image noise and force it into the image manifold without conditioning.</p>
-
-
-          <h3 class="title is-4">Results</h3>
-
-          <img src="static/images/5a/c.png" alt="forward" >
-          <h3 class="title is-5">Original Image Example 1</h3>
-          <img src="static/images/5a/iic1.png" alt="forward" >
-          <h3 class="title is-5">Ex1 SDEdit i_start = 1</h3>
-
-          <img src="static/images/5a/iic2.png" alt="forward" >
-          <h3 class="title is-5">Ex1 SDEdit i_start = 3</h3>
-
-          <img src="static/images/5a/iic3.png" alt="forward" >
-          <h3 class="title is-5">Ex1 SDEdit i_start = 5</h3>
-
-          <img src="static/images/5a/iic4.png" alt="forward" >
-          <h3 class="title is-5">Ex1 SDEdit i_start = 7</h3>
-
-          <img src="static/images/5a/iic5.png" alt="forward" >
-          <h3 class="title is-5">Ex1 SDEdit i_start = 10</h3>
-
-          <img src="static/images/5a/iic6.png" alt="forward" >
-          <h3 class="title is-5">Ex1 SDEdit i_start = 20</h3
-          <img src="static/images/5a/iic2.png" alt="forward" >
-
-
-
-
-          
-          <img src="static/images/5a/o1.png" alt="forward" >
-          <h3 class="title is-5">Original Image Example 2</h3>
-
-          <img src="static/images/5a/o2.png" alt="forward" >
-          <h3 class="title is-5">Ex2 SDEdit i_start = 1</h3>
-
-          <img src="static/images/5a/o3.png" alt="forward" >
-          <h3 class="title is-5">Ex2 SDEdit i_start = 3</h3>
-
-          <img src="static/images/5a/o4.png" alt="forward" >
-          <h3 class="title is-5">Ex2 SDEdit i_start = 5</h3>
-
-          <img src="static/images/5a/o5.png" alt="forward" >
-          <h3 class="title is-5">Ex2 SDEdit i_start = 7</h3>
-
-          <img src="static/images/5a/o6.png" alt="forward" >
-          <h3 class="title is-5">Ex2 SDEdit i_start = 10</h3>
-
-          <img src="static/images/5a/o7.png" alt="forward" >
-          <h3 class="title is-5">Ex2 SDEdit i_start = 20</h3>
-
-
-          <img src="static/images/5a/j1.png" alt="forward" >
-          <h3 class="title is-5">Original Image Example 3</h3>
-
-          <img src="static/images/5a/j2.png" alt="forward" >
-          <h3 class="title is-5">Ex3 SDEdit i_start = 1</h3>
-
-          <img src="static/images/5a/j3.png" alt="forward" >
-          <h3 class="title is-5">Ex3 SDEdit i_start = 3</h3>
-
-          <img src="static/images/5a/j4.png" alt="forward" >
-          <h3 class="title is-5">Ex3 SDEdit i_start = 5</h3>
-
-          <img src="static/images/5a/j5.png" alt="forward" >
-          <h3 class="title is-5">Ex3 SDEdit i_start = 7</h3>
-
-          <img src="static/images/5a/j6.png" alt="forward" >
-          <h3 class="title is-5">Ex3 SDEdit i_start = 10</h3>
-
-          <img src="static/images/5a/j7.png" alt="forward" >
-          <h3 class="title is-5">Ex3 SDEdit i_start = 20</h3>
-
-        </div>
-
-        <h2  class="title is-3">Hand Drawn and Web Images</h2>
-
-        <p>We apply the same process on hand drawn and web images</p>
-
-        <h3 class="title is-4">Results</h3>
-
-        <img src="static/images/5a/int1.png" alt="forward" >
-        <h3 class="title is-5">Avocado Ex 1</h3>
-
-        <img src="static/images/5a/in2.png" alt="forward" >
-        <h3 class="title is-5">Avocado SDEdit i_start = 1</h3>
-
-        <img src="static/images/5a/in3.png" alt="forward" >
-        <h3 class="title is-5">Avocado SDEdit i_start = 3</h3>
-
-        <img src="static/images/5a/in4.png" alt="forward" >
-        <h3 class="title is-5">Avocado SDEdit i_start = 5</h3>
-
-        <img src="static/images/5a/in5.png" alt="forward" >
-        <h3 class="title is-5">Avocado SDEdit i_start = 7</h3>
-
-        <img src="static/images/5a/in6.png" alt="forward" >
-
-        <h3 class="title is-5">Avocado SDEdit i_start = 10</h3>
-
-        <img src="static/images/5a/in7.png" alt="forward" >
-        <h3 class="title is-5">Avocado SDEdit i_start = 20</h3>
-
-
-        <img src="static/images/5a/e1.png" alt="forward" >
-        <h3 class="title is-5">Earth Ex 1</h3>
-
-        <img src="static/images/5a/e2.png" alt="forward" >
-        <h3 class="title is-5">Earth SDEdit i_start = 1</h3>
-
-        <img src="static/images/5a/e3.png" alt="forward" >
-        <h3 class="title is-5">Earth SDEdit i_start = 3</h3>
-
-        <img src="static/images/5a/e4.png" alt="forward" >
-        <h3 class="title is-5">Earth SDEdit i_start = 5</h3>
-
-        <img src="static/images/5a/e5.png" alt="forward" >
-        <h3 class="title is-5">Earth SDEdit i_start = 7</h3>
-
-        <img src="static/images/5a/e6.png" alt="forward" >
-        <h3 class="title is-5">Earth SDEdit i_start = 10</h3>
-
-        <img src="static/images/5a/e7.png" alt="forward" >
-        <h3 class="title is-5">Earth SDEdit i_start = 20</h3>
-
-
-        <img src="static/images/5a/t1.png" alt="forward" >
-        <h3 class="title is-5">Tomato Ex 1</h3>
-
-        <img src="static/images/5a/t2.png" alt="forward" >
-        <h3 class="title is-5">Tomato SDEdit i_start = 1</h3>
-
-        <img src="static/images/5a/t3.png" alt="forward" >
-        <h3 class="title is-5">Tomato SDEdit i_start = 3</h3>
-
-        <img src="static/images/5a/t4.png" alt="forward" >
-        <h3 class="title is-5">Tomato SDEdit i_start = 5</h3>
-
-        <img src="static/images/5a/t5.png" alt="forward" >
-        <h3 class="title is-5">Tomato SDEdit i_start = 7</h3>
-
-        <img src="static/images/5a/t6.png" alt="forward" >
-        <h3 class="title is-5">Tomato SDEdit i_start = 10</h3>
-
-        <img src="static/images/5a/t7.png" alt="forward" >
-        <h3 class="title is-5">Tomato SDEdit i_start = 20</h3>
-
-
-        <h2  class="title is-3">1.7.2 InPainting</h2>
-        <h3 class="title is-4">Approach</h3>
-        <div class="content has-text-justified">
-          <p>We apply the process so that we can the same content whenever the mask is 0 and diffused content when the mask is 1, where we apply this equation </p>
-          <img src="static/images/5a/eqm5.png" alt="forward" >
-
-          <h3 class="title is-4">Results</h3>
-
-          <img src="static/images/5a/c.png" alt="forward" >
-          <h3 class="title is-5">Original</h3>
-
-          <img src="static/images/5a/mask.png" alt="forward" >
-          <h3 class="title is-5">mask</h3>
-
-          <img src="static/images/5a/repl.png" alt="forward" >
-          <h3 class="title is-5">Hole to fill</h3>
-
-          <img src="static/images/5a/impaint.png" alt="forward" >
-          <h3 class="title is-5">Result</h3>
-
-
-          <img src="static/images/5a/p1.png" alt="forward" >
-          <h3 class="title is-5">Original</h3>
-
-          <img src="static/images/5a/pmask.png" alt="forward" >
-          <h3 class="title is-5">mask</h3>
-
-          <img src="static/images/5a/prep.png" alt="forward" >
-          <h3 class="title is-5">Hole to fill</h3>
-
-          <img src="static/images/5a/pres.png" alt="forward" >
-          <h3 class="title is-5">Result</h3>
-
-
-
-          <img src="static/images/5a/o1.png" alt="forward" >
-          <h3 class="title is-5">Original</h3>
-
-          <img src="static/images/5a/om.png" alt="forward" >
-          <h3 class="title is-5">mask</h3>
-
-          <img src="static/images/5a/or.png" alt="forward" >
-          <h3 class="title is-5">Hole to fill</h3>
-
-          <img src="static/images/5a/ores.png" alt="forward" >
-          <h3 class="title is-5">Result</h3>
-
-
-    </div>
-    <h2  class="title is-3">1.7.3 Text-Conditional Image-to-Image Translation</h2>
-    <h3 class="title is-4">Approach</h3>
-    <div class="content has-text-justified">
-      <p>Instead of using a high quality photo, we can use a different text prompt to translate. </p>
-
-
-      <h3 class="title is-4">Results</h3>
-
-      <img src="static/images/5a/r1.png" alt="forward" >
-      <h3 class="title is-5">Rocket Noise Level 1</h3>
-
-      <img src="static/images/5a/r2.png" alt="forward" >
-      <h3 class="title is-5">Rocket Noise Level 3</h3>
-
-      <img src="static/images/5a/r3.png" alt="forward" >
-      <h3 class="title is-5">Rocket Noise Level 5</h3>
-
-      <img src="static/images/5a/r4.png" alt="forward" >
-      <h3 class="title is-5">Rocket Noise Level 7</h3>
-
-      <img src="static/images/5a/r5.png" alt="forward" >
-      <h3 class="title is-5">Rocket Noise Level 10</h3>
-
-      <img src="static/images/5a/r6.png" alt="forward" >
-      <h3 class="title is-5">Rocket Noise Level 20</h3>
-
-      <img src="static/images/5a/c.png" alt="forward" >
-      <h3 class="title is-5">Original</h3>
-
-      <img src="static/images/5a/os1.png" alt="forward" >
-      <h3 class="title is-5">Oski Original</h3>
-
-      <img src="static/images/5a/os2.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 1</h3>
-
-      <img src="static/images/5a/os3.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 3</h3>
-
-      <img src="static/images/5a/os4.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 5</h3>
-
-      <img src="static/images/5a/os5.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 7</h3>
-
-      <img src="static/images/5a/os6.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 10</h3>
-
-      <img src="static/images/5a/os7.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 20</h3>
-
-      <img src="static/images/5a/ps1.png" alt="forward" >
-      <h3 class="title is-5">Puff Original</h3>
-
-      <img src="static/images/5a/ps2.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 1</h3>
-
-      <img src="static/images/5a/ps3.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 3</h3>
-
-      <img src="static/images/5a/ps4.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 5</h3>
-
-      <img src="static/images/5a/ps5.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 7</h3>
-
-      <img src="static/images/5a/ps6.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 10</h3>
-
-      <img src="static/images/5a/ps7.png" alt="forward" >
-      <h3 class="title is-5">Skull Noise Level 20</h3>
-      
-</div>
-
-
-
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-<!-- Paper abstract -->
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">1.8 Visual Anagrams</h2>
-        <h3 class="title is-4">Approach</h3>
-
-        <div class="content has-text-justified">
-          <p> 
-           We can make visual anagrams where the image would look like one thing from one side and another thing from another side. At step t we use the first prompt to get noise e1, then we flip the iamge and get noise e2. We then average the noise and use that as our noise estimate. 
-          </p>
-
-          <img src="static/images/5a/eq6.png" alt="forward" >
-
-
-
-            <h3 class="title is-4">Results</h3>
-
-              <img src="static/images/5a/flip1.png" alt="church" class="abstract-image">
-              <h3 class="title is-5">An Oil Painting of People Around a Fire</h3>
-
-              <img src="static/images/5a/flip1.png" alt="church" class="abstract-image" style="transform: rotate(180deg);">
-              <h3 class="title is-5">An Old Man</h3>
-
-              <img src="static/images/5a/moutaingbariasta.png" alt="church" class="abstract-image">
-              <h3 class="title is-5">Snowy Village</h3>
-
-              <img src="static/images/5a/moutaingbariasta.png" alt="church" class="abstract-image" style="transform: rotate(180deg);">
-              <h3 class="title is-5">Barista</h3>
-
-              <img src="static/images/5a/pencilship.png" alt="church" class="abstract-image">
-              <h3 class="title is-5 ">Rocket Ship </h3>
-
-              <img src="static/images/5a/pencilship.png" alt="church" class="abstract-image" style="transform: rotate(180deg);">
-              <h3 class="title is-5 ">Pencil</h3>
-  
-
-            
-      
-
-        </div>
-
-
-
-
-
-        <h2 class="title is-3">1.9 Hybrid Images</h2>
-        <h3 class="title is-4">Approach</h3>
-
-        <div class="content has-text-justified">
-          <p> 
-           We can do somthing similar to project 2 where we create hybrid iamge.s We take the low pass noise of one prompt and the high pass noise of the other prompt and combine the noise to diffuse.  
-          </p>
-          <img src="static/images/5a/eq7.png" alt="forward" >
-
-
-
-
-            <h3 class="title is-4">Results</h3>
-
-
-              <img src="static/images/5a/dogskull.png"  class="abstract-image">
-              <h3 class="title is-5">Dog Skull</h3>
-
-              <img src="static/images/5a/rocketwaterfall.png"  class="abstract-image">
-              <h3 class="title is-5 ">Rocket Waterfall</h3>
-
-              <img src="static/images/5a/a1.png"  class="abstract-image" >
-              <h3 class="title is-5 ">Waterfall Skull</h3>
-
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Part 5B Diffusion Models From Scratch</h2><img src="static/images/5b/ce20.png" alt="emir" class="abstract-image" style="width: 200%;">
- 
-        <div class="content has-text-justified">
-          
-        </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- End paper abstract -->
-<!-- Paper abstract -->
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">1.2 Using the UNet to Train a Denoiser</h2>
-        <h3 class="title is-4">Approach</h3>
-
-        <div class="content has-text-justified">
-          <p> 
-We first implement a UNet mode to train a denoiser. Lets first visualize the effect of adding noise to the image.          
-        
-          </p>
-            <img src="static/images/5b/noising.png" alt="church" class="abstract-image" style="width: 100%;">
-
-
-            <p>To implemnt the unet, I followed this architecture</p>
-
-            <img src="static/images/5b/unet.png" alt="church" class="abstract-image" style="width: 100%;">
-
-
-            I trained the denoiser  by regressing to the orignal image after adding noise to it. 
-
-            <img src="static/images/5b/denoisep.png" alt="church" class="abstract-image" style="width: 100%;">
-            <h3 class="title is-5">Results</h3>
-
-            <img src="static/images/5b/desnoisee1.png" alt="church" class="abstract-image" style="width: 100%;">
-
-            <img src="static/images/5b/desnoisee5.png" alt="church" class="abstract-image" style="width: 100%;">
-
-            <p>We can also check the denoisers effectiveness on other values of sigma. It was trained in sigma = 0.5</p>
-
-            <img src="static/images/5b/d0.png" alt="church" class="abstract-image" style="width: 100%;">
-
-            <img src="static/images/5b/d2.png" alt="church" class="abstract-image" style="width: 100%;">
-
-            <img src="static/images/5b/d4.png" alt="church" class="abstract-image" style="width: 100%;">
-
-            <img src="static/images/5b/d6.png" alt="church" class="abstract-image" style="width: 100%;">
-
-            <img src="static/images/5b/d8.png" alt="church" class="abstract-image" style="width: 100%;">
-
-            <img src="static/images/5b/d10.png" alt="church" class="abstract-image" style="width: 100%;">
-
-
-
-            
-
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Training a DDPM Denoising UNET</h2>
-        <h3 class="title is-4">Approach</h3>
-          
-          <p>We define the FCBlock add add it allowing it to accept a time parameter. </p>
-
-          <img src="static/images/5b/conditional_arch.png" alt="forward" style="width: 100%;">
-
-          <img src="static/images/5b/samp.png" alt="forward" style="width: 100%;">
-        
-       <p>We can then sample in a similar process to 5a to implment the DDPM. </p>       
-<h3 class="title is-4">Results</h3>
-
-<img src="static/images/5b/e5sam.png" alt="forward" style="width: 100%;">
-<h3 class="title is-5">5 Epochs Result</h3>
-
-<img src="static/images/5b/e20sam.png" alt="forward" style="width: 100%;">
-<h3 class="title is-5">20 Epochs Result</h3>
-
-</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Paper abstract -->
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Class Conditioned</h2>
-        <h3 class="title is-4">Approach</h3>
-
-        <div class="content has-text-justified">
-          <p> 
-            Class conditioning was impplemented so that specfic digits can be generated. It was implemented by adding additional fcblocks that add class infomration into the Unet. 
-          </p>
-          <h3 class="title is-4">Results</h3>
-
-          <img src="static/images/5b/cp.png" alt="forward" style="width: 100%;">
-
-
-          <img src="static/images/5b/ce5.png" alt="forward" style="width: 100%;">
-          <h3 class="title is-5">5 Epochs Result</h3>
-
-          <img src="static/images/5b/ce20.png" alt="forward" style="width: 100%;">
-          <h3 class="title is-5">20 Epochs Result</h3>
-
-
-        
-
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
 
 
 
